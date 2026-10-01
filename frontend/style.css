@@ -1,0 +1,567 @@
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f1f5f9;
+    color: #172033;
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #172033;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 18px;
+    color: #64748b;
+}
+
+
+/* =========================================
+   MAIN CARD
+========================================= */
+
+.card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 10px 35px rgba(15, 23, 42, 0.08);
+}
+
+
+/* =========================================
+   DRAG & DROP AREA
+========================================= */
+
+.upload-area {
+    border: 2px dashed #2563eb;
+    border-radius: 18px;
+    background: #f8fbff;
+    padding: 50px 25px;
+    text-align: center;
+    transition: all 0.25s ease;
+}
+
+.upload-area:hover {
+    background: #eff6ff;
+}
+
+.upload-area.drag-over {
+    background: #dbeafe;
+    border-color: #1d4ed8;
+    transform: scale(1.01);
+}
+
+.upload-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.upload-area h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.upload-area > p {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   CHOOSE BUTTON
+========================================= */
+
+#chooseButton {
+    border: none;
+    background: #2563eb;
+    color: white;
+    padding: 13px 30px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#chooseButton:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   FILE NAME
+========================================= */
+
+.file-name {
+    margin-top: 15px;
+    margin-bottom: 0 !important;
+    color: #475569 !important;
+    font-size: 14px;
+    word-break: break-word;
+}
+
+
+/* =========================================
+   PREVIEW
+========================================= */
+
+.preview-section {
+    display: none;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.preview-section h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+#previewImage {
+    display: block;
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    margin: 0 auto 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.15);
+}
+
+
+/* =========================================
+   PREDICT BUTTON
+========================================= */
+
+#predictButton {
+    width: 100%;
+    border: none;
+    background: #16a34a;
+    color: white;
+    padding: 16px 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#predictButton:hover {
+    background: #15803d;
+    transform: translateY(-1px);
+}
+
+#predictButton:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.loading {
+    display: none;
+    text-align: center;
+    padding: 30px 10px;
+}
+
+.loading p {
+    margin-top: 15px;
+    color: #64748b;
+}
+
+.spinner {
+    width: 45px;
+    height: 45px;
+    margin: auto;
+    border: 5px solid #e2e8f0;
+    border-top: 5px solid #2563eb;
+    border-radius: 50%;
+    animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================
+   RESULT
+========================================= */
+
+.result {
+    display: none;
+    margin-top: 30px;
+    padding: 30px;
+    background: #f8fafc;
+    border-radius: 16px;
+}
+
+.result h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   PREDICTION BOX
+========================================= */
+
+.prediction-box {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(15, 23, 42, 0.06);
+}
+
+.label {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 7px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.prediction {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2563eb;
+    margin-bottom: 22px;
+}
+
+.confidence {
+    font-size: 26px;
+    font-weight: 700;
+    color: #16a34a;
+}
+
+
+/* =========================================
+   CONFIDENCE CHART
+========================================= */
+
+.chart-section {
+    margin-top: 30px;
+}
+
+.chart-section h3 {
+    font-size: 21px;
+    margin-bottom: 20px;
+}
+
+.chart-row {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.chart-label {
+    font-weight: 600;
+    color: #172033;
+    text-transform: capitalize;
+}
+
+.bar-container {
+    position: relative;
+    height: 32px;
+    background: #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.confidence-bar {
+    height: 100%;
+    width: 0;
+    background: #2563eb;
+    border-radius: 8px;
+    transition: width 0.7s ease;
+}
+
+.chart-value {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #172033;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   TOP 5
+========================================= */
+
+.top5-section {
+    margin-top: 30px;
+}
+
+.top5-section h3 {
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.top5-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    padding: 15px 18px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border-left: 4px solid #2563eb;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.05);
+}
+
+.top5-class {
+    font-weight: 600;
+    color: #172033;
+}
+
+.top5-confidence {
+    font-weight: 700;
+    color: #2563eb;
+}
+
+
+/* =========================================
+   CIFAR CLASSES
+========================================= */
+
+.classes {
+    background: #ffffff;
+    margin-top: 25px;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.classes h3 {
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+.class-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.class-list span {
+    background: #eef4ff;
+    color: #1e3a8a;
+    padding: 10px 17px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/* =========================================
+   HISTORY
+========================================= */
+
+.history-section {
+    background: #ffffff;
+    margin-top: 25px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.history-section h3 {
+    font-size: 22px;
+}
+
+.clear-history {
+    border: none;
+    background: #fee2e2;
+    color: #b91c1c;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.clear-history:hover {
+    background: #fecaca;
+}
+
+
+/* =========================================
+   HISTORY ITEM
+========================================= */
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8fafc;
+    padding: 15px 18px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border-left: 4px solid #16a34a;
+}
+
+.history-left,
+.history-right {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.history-left strong {
+    color: #172033;
+    font-size: 16px;
+}
+
+.history-left span,
+.history-right span {
+    color: #64748b;
+    font-size: 13px;
+}
+
+.history-right {
+    text-align: right;
+}
+
+.history-right strong {
+    color: #16a34a;
+}
+
+.empty-history {
+    text-align: center;
+    color: #94a3b8;
+    padding: 15px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    text-align: center;
+    margin-top: 25px;
+    padding: 20px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .container {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    .header h1 {
+        font-size: 30px;
+    }
+
+    .header p {
+        font-size: 16px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .upload-area {
+        padding: 35px 15px;
+    }
+
+    #previewImage {
+        width: 220px;
+        height: 220px;
+    }
+
+    .chart-row {
+        grid-template-columns: 90px 1fr;
+        gap: 10px;
+    }
+
+    .chart-label {
+        font-size: 13px;
+    }
+
+    .history-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .history-right {
+        text-align: left;
+    }
+
+    .history-header {
+        gap: 10px;
+    }
+}

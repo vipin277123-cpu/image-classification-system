@@ -1,0 +1,183 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CIFAR-10 Image Classifier</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <h1>🖼️ CIFAR-10 Image Classifier</h1>
+        <p>MobileNetV2 Image Classification</p>
+    </div>
+
+    <!-- Main Card -->
+    <div class="card">
+
+        <!-- Drag & Drop Area -->
+        <div class="upload-area" id="uploadArea">
+
+            <div class="upload-icon">📁</div>
+
+            <h2>Upload an Image</h2>
+
+            <p>Drag & drop your image here or choose a file</p>
+
+            <input
+                type="file"
+                id="imageInput"
+                accept="image/jpeg,image/png"
+                hidden
+            >
+
+            <button type="button" id="chooseButton">
+                Choose Image
+            </button>
+
+            <p class="file-name" id="fileName">
+                No image selected
+            </p>
+
+        </div>
+
+        <!-- Image Preview -->
+        <div class="preview-section" id="previewSection">
+
+            <h3>Image Preview</h3>
+
+            <img
+                id="previewImage"
+                src=""
+                alt="Selected image preview"
+            >
+
+            <button
+                type="button"
+                id="predictButton"
+            >
+                🔍 Predict Image
+            </button>
+
+        </div>
+
+        <!-- Loading -->
+        <div class="loading" id="loading">
+
+            <div class="spinner"></div>
+
+            <p>Classifying image...</p>
+
+        </div>
+
+        <!-- Result -->
+        <div class="result" id="result">
+
+            <h2>Prediction Result</h2>
+
+            <!-- Main Prediction -->
+            <div class="prediction-box">
+
+                <p class="label">Predicted Class</p>
+
+                <p id="prediction" class="prediction">
+                    -
+                </p>
+
+                <p class="label">Confidence</p>
+
+                <p id="confidence" class="confidence">
+                    -
+                </p>
+
+            </div>
+
+            <!-- Confidence Chart -->
+            <div class="chart-section">
+
+                <h3>Confidence Scores</h3>
+
+                <div id="confidenceChart"></div>
+
+            </div>
+
+            <!-- Top 5 -->
+            <div class="top5-section">
+
+                <h3>Top-5 Predictions</h3>
+
+                <div id="top5Results"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CIFAR-10 Classes -->
+    <div class="classes">
+
+        <h3>CIFAR-10 Classes</h3>
+
+        <div class="class-list">
+
+            <span>✈️ Airplane</span>
+            <span>🚗 Automobile</span>
+            <span>🐦 Bird</span>
+            <span>🐱 Cat</span>
+            <span>🦌 Deer</span>
+            <span>🐕 Dog</span>
+            <span>🐸 Frog</span>
+            <span>🐎 Horse</span>
+            <span>🚢 Ship</span>
+            <span>🚚 Truck</span>
+
+        </div>
+
+    </div>
+
+    <!-- Prediction History -->
+    <div class="history-section">
+
+        <div class="history-header">
+            <h3>🕘 Recent Predictions</h3>
+
+            <button
+                type="button"
+                id="clearHistoryButton"
+                class="clear-history"
+            >
+                Clear History
+            </button>
+        </div>
+
+        <div id="history">
+
+            <p class="empty-history">
+                No predictions yet.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>MobileNetV2 • PyTorch • FastAPI</p>
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+```
